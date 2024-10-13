@@ -22,7 +22,13 @@
               <td>{{ $livro->titulo }}</td>
               <td>{{ $livro->autor }}</td>
               <td>{{ $livro->paginas }}</td>
-              <td><button class="btn btn-danger"><a class="text-decoration-none text-light" href="livro_edit.blade.php">Deletar</a></button></td>
+              <form action="{{ route('livros.destroy', ['livro' => $livro->id]) }}" method="post">
+                @csrf
+                <input type="hidden" name="_method" value="DELETE">
+                <td>
+                  <button class="btn btn-danger" type="submit">Deletar</button>
+                </td>
+              </form>
               <td><button class="btn btn-success"><a class="text-decoration-none text-light" href="{{ route('livros.edit', ['livro' => $livro->id]) }}">Atualizar</a></button></td>
           </tr>
         @endforeach

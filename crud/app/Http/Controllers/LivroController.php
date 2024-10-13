@@ -42,7 +42,7 @@ class LivroController extends Controller
 
     public function show(string $id)
     {
-
+        return view('livros', ['livro' => $livro]);
     }
 
     public function edit(Livro $livro)
@@ -63,6 +63,8 @@ class LivroController extends Controller
 
     public function destroy(string $id)
     {
+        $this->livro->where('id', $id)->delete();
 
+        return redirect()->route('livros.index');
     }
 }
