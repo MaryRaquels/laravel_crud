@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Livro;
+use App\Http\Requests\StoreUpdateRequest;
 
 class LivroController extends Controller
 {
@@ -26,7 +27,7 @@ class LivroController extends Controller
         return view('livro_create');    
     }
 
-    public function store(Request $request)
+    public function store(StoreUpdateRequest $request)
     {
         $created = $this->livro->create([
             'titulo' => $request->input('titulo'),
@@ -42,7 +43,7 @@ class LivroController extends Controller
 
     public function show(string $id)
     {
-        return view('livros', ['livro' => $livro]);
+        //return view('livros', ['livro' => $livro]);
     }
 
     public function edit(Livro $livro)
