@@ -36,7 +36,7 @@ class StoreUpdateRequest extends FormRequest
             'paginas' => [
                 'required',
                 'min:1',
-                'max:3',
+                'max:4',
             ],
         ];
     }
