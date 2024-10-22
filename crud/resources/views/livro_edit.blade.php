@@ -12,6 +12,8 @@
                 <li>{{ $error }}</li>
             @endforeach
         </ul>
+        @elseif(session->has('message'))
+            {{ session->get('message')}}
     </div>
 @endif
 <div class="d-flex justify-content-center align-items-center">
