@@ -1,5 +1,4 @@
 @extends('template')
-
 @section('content')
 
 <div class="container mt-3 justify-content-center align-items-center">

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,10 @@
 
     <!--Font'<s-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<script src="{{ asset('js/app.js') }}" defer></script>
+
 </head>
 <body>
     <header>
@@ -27,6 +32,7 @@
                 <li class="nav-item">
                     <a class="nav-link " href="/livros">Livros</a>
                 </li>
+                
             </ul>
         </div>
     </div>
