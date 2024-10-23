@@ -9,10 +9,16 @@
     <div class="alert alert-danger m-2 d-flex justify-content-center align-items-center">
         <ul class="mb-0 ">
             @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
+                {{ $error }}
             @endforeach
         </ul>
     </div>
+    @elseif(session()->has('message'))
+        <div class="alert alert-success m-2 d-flex justify-content-center align-items-center">
+            <ul class="mb-0 ">
+                {{ session()->get('message')}}
+            </ul>
+        </div>
 @endif
 <div class="d-flex justify-content-center align-items-center">
     <div class="card bg-dark text-white p-4" style="width: 400px;">
@@ -30,7 +36,10 @@
                 <input type="number" name="paginas" class="form-control @error('paginas') is-invalid @enderror" value="{{ old('paginas', $livro->paginas) }}" placeholder="N° de Páginas do Livro">
             </div>
             
-            <button type="submit" class="btn btn-primary w-100">Atualizar</button>
+            <button type="submit" class="btn btn-primary w-100 mb-2">Atualizar</button>
+            <button class="btn btn-secondary w-100">
+                <a href="/livros" class="text-decoration-none text-light">Voltar</a>
+            </button>
         </form>
     </div>
 </div>

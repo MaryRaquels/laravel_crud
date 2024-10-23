@@ -26,11 +26,10 @@ class StoreUpdateRequest extends FormRequest
                 'required',
                 'min:3',
                 'max:45',
-                'unique:livros',
             ],
             'autor' => [
                 'required',
-                'min:4',
+                'min:2',
                 'max:45',
             ],
             'paginas' => [
