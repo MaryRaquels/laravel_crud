@@ -12,6 +12,8 @@
                 {{ $error }}
             @endforeach
         </ul>
+        @elseif(session->has('message'))
+            {{ session->get('message')}}
     </div>
     @elseif(session()->has('message'))
         <div class="alert alert-success m-2 d-flex justify-content-center align-items-center">
